@@ -1,7 +1,5 @@
 .spacevim.log
 .SpaceVim.log
-docs/_site/*
-docs/Gemfile.lock
 tags
 build/
 public/
