@@ -4,21 +4,32 @@ The [SpaceVim project](https://github.com/wsdjeg/SpaceVim) originated in Decembe
 Main Maintainer was [Eric Wong](https://github.com/wsdjeg).
 
 SpaceVim is a modular configuration of Vim and Neovim.
-It's inspired by spacemacs.
+It's inspired by Spacemacs.
 It manages collections of plugins in layers, which help to collect related packages together to provide features.
 This approach helps keep the configuration organized and reduces overhead for the user by keeping them from having to think about what packages to install.
 
 ## Forked Project
 
-I use SpaceVim as my main editor and really like it.
+I use SpaceVim as my main editor and really love it.
 Thus I decided to give it a try to proceed with the project on my own.
-One consequence of this is that I'll reduce the features to the ones I'm using, mainly due to the limited time I have.
+One consequence of this is that I'll reduce the project scope and features to the ones I'm using, mainly due to the limited time I have.
+
+### Compatibility
+
+In contrast to the former SpaceVim distribution the new version supports only [Neovim](https://github.com/neovim/neovim) and Linux.
+I'm not sure about [Neovim QT](https://github.com/equalsraf/neovim-qt) adn how much effort this is, I'll keep related configs by now.
+
+Reasoning:
+- I cant spare additional time to implement and test for other systems.
+- I used SpaceVim with Vim for quite some time and had a lot of troubles, Neovim simply works far better.
 
 ## Features
 
+The following features from origin SpaceVim implementation remains as goals:
+
 - **Modularization:** plugins and functions are organized in layers.
-- **Compatible api:** a series of compatible APIs for Vim/Neovim.
-- **Great documentation:** online documentation and `:h SpaceVim`.
+- **Great documentation:** ~~online documentation~~ and `:h SpaceVim`.
+  By now the "online documentation" are the markdown files in the Github repository.
 - **Better experience:** rewrite core plugins using lua
 - **Beautiful UI:** you'll love the awesome UI and its useful features.
 - **Mnemonic key bindings:** key binding guide will be displayed automatically
@@ -27,6 +38,8 @@ One consequence of this is that I'll reduce the features to the ones I'm using, 
 - **Consistent experience:** consistent experience between terminal and gui
 
 ## Project Layout
+
+As the focus is on [Neovim](https://neovim.io/) we structure it after [Neovim plugin templates](https://github.com/ellisonleao/nvim-plugin-template).
 
 ```txt
 ├─ .ci/                           build automation
