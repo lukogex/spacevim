@@ -42,9 +42,8 @@ One consequence of this is that I'll reduce the features to the ones I'm using, 
 ├─ docker/                        docker image generator
 ├─ bundle/                        bundle plugins
 ├─ lua/spacevim/plugin            builtin plugins(lua)
-├─ doc/                           help(cn/en)
+├─ doc/                           help
 ├─ docs/                          website(cn/en)
-├─ wiki/                          wiki(cn/en)
 ├─ bin/                           executable
 └─ test/                          tests
 ```
