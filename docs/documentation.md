@@ -93,7 +93,6 @@ description: "General documentation about how to use SpaceVim, including the qui
   - [Highlight current symbol](#highlight-current-symbol)
   - [Error handling](#error-handling)
   - [EditorConfig](#editorconfig)
-  - [Vim Server](#vim-server)
 
 <!-- vim-markdown-toc -->
 
@@ -2622,18 +2621,3 @@ Custom sign symbol:
 SpaceVim supports [EditorConfig](https://editorconfig.org/), a configuration file to “define and maintain consistent coding styles between different editors and IDEs.”
 
 To customize your editorconfig experience, read the [editorconfig-vim package’s documentation](https://github.com/editorconfig/editorconfig-vim/blob/master/README.md).
-
-### Vim Server
-
-SpaceVim starts a server at launch. This server is killed whenever you close your Vim windows.
-
-**Connecting to the Vim server**
-
-If you are using Neovim, you need to install [neovim-remote](https://github.com/mhinz/neovim-remote), then add this to your bashrc.
-
-```sh
-export PATH=$PATH:$HOME/.SpaceVim/bin
-```
-
-Use `svc` to open a file in the existing Vim server, or use `nsvc` to open a file in the existing Neovim server.
-![server-and-client](https://img.spacevim.org/32554968-7164fe9c-c4d6-11e7-95f7-f6a6ea75e05b.gif)

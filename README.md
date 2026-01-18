@@ -1,3 +1,7 @@
+[Quick Start Guide](docs/quick-start-guide.md) \|
+[Documentation](docs/documentation.md) \|
+[Layers](docs/layers/)
+
 # SpaceVim
 
 The [SpaceVim project](https://github.com/wsdjeg/SpaceVim) originated in December 2016 and stopped maintenance on February 21, 2025.
@@ -17,11 +21,16 @@ One consequence of this is that I'll reduce the project scope and features to th
 ### Compatibility
 
 In contrast to the former SpaceVim distribution the new version supports only [Neovim](https://github.com/neovim/neovim) and Linux.
-I'm not sure about [Neovim QT](https://github.com/equalsraf/neovim-qt) adn how much effort this is, I'll keep related configs by now.
+I'm not sure about [Neovim QT](https://github.com/equalsraf/neovim-qt) and how much effort this is, I'll keep related configs by now.
 
 Reasoning:
 - I cant spare additional time to implement and test for other systems.
 - I used SpaceVim with Vim for quite some time and had a lot of troubles, Neovim simply works far better.
+
+### Credits
+
+This project wouldn't exist without the work from Eric Wong and all the people who contributed.
+Please check the [origin project](https://github.com/wsdjeg/SpaceVim) for further details.
 
 ## Features
 
@@ -60,8 +69,3 @@ As the focus is on [Neovim](https://neovim.io/) we structure it after [Neovim pl
 ├─ bin/                           executable
 └─ test/                          tests
 ```
-
-## Credits
-
-This project wouldn't exist without the work from Eric Wong and all the people who contributed.
-Please check the [origin project](https://github.com/wsdjeg/SpaceVim) for further details.
