@@ -77,7 +77,6 @@ As the focus is on [Neovim](https://neovim.io/) we structure it after [Neovim pl
 ├─ bundle/                        bundle plugins
 ├─ lua/spacevim/plugin            builtin plugins(lua)
 ├─ doc/                           help
-├─ docs/                          website(cn/en)
-├─ bin/                           executable
+├─ docs/                          documentation
 └─ test/                          tests
 ```
