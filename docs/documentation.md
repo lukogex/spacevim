@@ -7,7 +7,6 @@ description: "General documentation about how to use SpaceVim, including the qui
 
 <!-- vim-markdown-toc GFM -->
 
-- [Screenshots](#screenshots)
 - [New Concepts](#new-concepts)
 - [Update and Rollback](#update-and-rollback)
   - [Update SpaceVim itself](#update-spacevim-itself)
@@ -94,20 +93,6 @@ description: "General documentation about how to use SpaceVim, including the qui
   - [EditorConfig](#editorconfig)
 
 <!-- vim-markdown-toc -->
-
-## Screenshots
-
-**welcome page**
-
-![welcome-page](https://img.spacevim.org/68079142-904e4280-fe1f-11e9-993e-b834ea3d39ea.png)
-
-**workflow**
-
-![work-flow](https://img.spacevim.org/workflow.png)
-
-- colorscheme: one
-- windows: Git remotes, outline, Todos, Code runner, Terminal, file explore.
-- code completion engine: nvim-cmp
 
 ## New Concepts
 

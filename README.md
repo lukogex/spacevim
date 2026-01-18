@@ -46,6 +46,18 @@ The following features from origin SpaceVim implementation remains as goals:
 - **Lower the risk of RSI:** Heavily using the `<Space>` key instead of modifiers.
 - **Consistent experience:** Consistent experience between terminal and gui.
 
+**User Interface**
+
+![spacevim user interface](docs/img/spacevim-demo-ui.png)
+
+**IDE Example**
+
+- colorscheme: one
+- windows: Git remotes, outline, Todos, Code runner, Terminal, file explore.
+- code completion engine: nvim-cmp
+
+![spacevim ide](docs/img/spacevim-demo-ide.png)
+
 ## Project Layout
 
 As the focus is on [Neovim](https://neovim.io/) we structure it after [Neovim plugin templates](https://github.com/ellisonleao/nvim-plugin-template).
