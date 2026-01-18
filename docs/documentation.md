@@ -7,7 +7,6 @@ description: "General documentation about how to use SpaceVim, including the qui
 
 <!-- vim-markdown-toc GFM -->
 
-- [Highlighted Features](#highlighted-features)
 - [Screenshots](#screenshots)
 - [New Concepts](#new-concepts)
 - [Update and Rollback](#update-and-rollback)
@@ -95,16 +94,6 @@ description: "General documentation about how to use SpaceVim, including the qui
   - [EditorConfig](#editorconfig)
 
 <!-- vim-markdown-toc -->
-
-## Highlighted Features
-
-- **Modularization:** Plugins are organized in [layers](https://spacevim.org/layers/).
-- **Compatible API:** A series of [compatible API](https://spacevim.org/api/) for Vim/Neovim.
-- **Great documentation:** Everything is documented in `:h SpaceVim`.
-- **Better experience:** Most of the core plugins have been rewritten using Lua.
-- **Beautiful UI:** The interface has been carefully designed.
-- **Mnemonic key bindings:** Key bindings are organized using mnemonic prefixes.
-- **Lower the risk of RSI:** Heavily using the `<Space>` key instead of modifiers.
 
 ## Screenshots
 
