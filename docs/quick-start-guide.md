@@ -16,7 +16,6 @@ It will give you a good idea of what SpaceVim is like.
 
 - [Installation](#installation)
   - [Linux and macOS](#linux-and-macos)
-  - [Windows](#windows)
 - [Configuration](#configuration)
 - [Online tutorials](#online-tutorials)
 - [Learning SpaceVim](#learning-spacevim)
@@ -64,10 +63,6 @@ If you got a vimproc error like this:
 
 Please read `:help vimproc` and make it, you may need to install make (from `build-essential`)
 and a C compiler (like `gcc`) to build the dll.
-
-### Windows
-
-The easiest way is to download and run [install.cmd](../install.cmd) or install [SpaceVim manually](../faq/#how-to-install-spacevim-manually). The script installs or updates SpaceVim (if it exists) for Vim and Neovim.
 
 ## Configuration
 

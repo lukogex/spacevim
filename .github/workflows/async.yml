@@ -19,4 +19,4 @@ jobs:
       env:
         BOTSECRET: ${{ secrets.BOTSECRET_GITHUB }}
         SpaceVim_COMMIT_MSG: ${{ github.event.commits[0].message }}
-      run: .ci/detach_plugin.sh ${{ matrix.detachPlugin }}
+      run: scripts/detach_plugin.sh ${{ matrix.detachPlugin }}
