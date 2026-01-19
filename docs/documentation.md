@@ -7,8 +7,6 @@ description: "General documentation about how to use SpaceVim, including the qui
 
 <!-- vim-markdown-toc GFM -->
 
-- [Highlighted Features](#highlighted-features)
-- [Screenshots](#screenshots)
 - [New Concepts](#new-concepts)
 - [Update and Rollback](#update-and-rollback)
   - [Update SpaceVim itself](#update-spacevim-itself)
@@ -93,33 +91,8 @@ description: "General documentation about how to use SpaceVim, including the qui
   - [Highlight current symbol](#highlight-current-symbol)
   - [Error handling](#error-handling)
   - [EditorConfig](#editorconfig)
-  - [Vim Server](#vim-server)
 
 <!-- vim-markdown-toc -->
-
-## Highlighted Features
-
-- **Modularization:** Plugins are organized in [layers](https://spacevim.org/layers/).
-- **Compatible API:** A series of [compatible API](https://spacevim.org/api/) for Vim/Neovim.
-- **Great documentation:** Everything is documented in `:h SpaceVim`.
-- **Better experience:** Most of the core plugins have been rewritten using Lua.
-- **Beautiful UI:** The interface has been carefully designed.
-- **Mnemonic key bindings:** Key bindings are organized using mnemonic prefixes.
-- **Lower the risk of RSI:** Heavily using the `<Space>` key instead of modifiers.
-
-## Screenshots
-
-**welcome page**
-
-![welcome-page](https://img.spacevim.org/68079142-904e4280-fe1f-11e9-993e-b834ea3d39ea.png)
-
-**workflow**
-
-![work-flow](https://img.spacevim.org/workflow.png)
-
-- colorscheme: one
-- windows: Git remotes, outline, Todos, Code runner, Terminal, file explore.
-- code completion engine: nvim-cmp
 
 ## New Concepts
 
@@ -134,7 +107,7 @@ transient state buffer. Additional information may as well be displayed in it.
 
 Move Text Transient State:
 
-![Move Text Transient State](https://img.spacevim.org/28489559-4fbc1930-6ef8-11e7-9d5a-716fe8dbb881.png)
+![Move Text Transient State](img/spacevim-demo-transient-states.png)
 
 ## Update and Rollback
 
@@ -2622,18 +2595,3 @@ Custom sign symbol:
 SpaceVim supports [EditorConfig](https://editorconfig.org/), a configuration file to “define and maintain consistent coding styles between different editors and IDEs.”
 
 To customize your editorconfig experience, read the [editorconfig-vim package’s documentation](https://github.com/editorconfig/editorconfig-vim/blob/master/README.md).
-
-### Vim Server
-
-SpaceVim starts a server at launch. This server is killed whenever you close your Vim windows.
-
-**Connecting to the Vim server**
-
-If you are using Neovim, you need to install [neovim-remote](https://github.com/mhinz/neovim-remote), then add this to your bashrc.
-
-```sh
-export PATH=$PATH:$HOME/.SpaceVim/bin
-```
-
-Use `svc` to open a file in the existing Vim server, or use `nsvc` to open a file in the existing Neovim server.
-![server-and-client](https://img.spacevim.org/32554968-7164fe9c-c4d6-11e7-95f7-f6a6ea75e05b.gif)

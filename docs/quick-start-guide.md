@@ -16,9 +16,7 @@ It will give you a good idea of what SpaceVim is like.
 
 - [Installation](#installation)
   - [Linux and macOS](#linux-and-macos)
-  - [Windows](#windows)
 - [Configuration](#configuration)
-- [Online tutorials](#online-tutorials)
 - [Learning SpaceVim](#learning-spacevim)
 - [User experiences](#user-experiences)
 
@@ -64,10 +62,6 @@ If you got a vimproc error like this:
 
 Please read `:help vimproc` and make it, you may need to install make (from `build-essential`)
 and a C compiler (like `gcc`) to build the dll.
-
-### Windows
-
-The easiest way is to download and run [install.cmd](../install.cmd) or install [SpaceVim manually](../faq/#how-to-install-spacevim-manually). The script installs or updates SpaceVim (if it exists) for Vim and Neovim.
 
 ## Configuration
 
@@ -121,27 +115,10 @@ If you want to use vim script to configure SpaceVim, please check out the
 
 If there are errors in your `init.toml`, the setting will not be applied. See [FAQ](../faq/#why-are-the-options-in-toml-file-not-applied). There should be only one `[options]` section in `init.toml`.
 
-## Online tutorials
-
-This is a list of online tutorials for using SpaceVim as a general IDE and programming language support:
-
-- [use vim as general IDE](../use-vim-as-ide/): a general guide for using SpaceVim as an IDE
-
-A list of guides for programming language support:
-
-<ul>
-    {% for post in site.categories.tutorials %}
-            <li>
-               <a href="{{ post.url }}">{{ post.language | default: post.title }}</a>
-            </li>
-    {% endfor %}
-</ul>
-
 ## Learning SpaceVim
 
-- [SpaceVim Documentation](../documentation). Also known as "The Book",
+- [SpaceVim Documentation](../documentation).
   The SpaceVim Documentation will introduce you to the main topics important to using SpaceVim.
-  The book is the primary official document of SpaceVim.
 - [Hack-SpaceVim](https://github.com/Gabirel/Hack-SpaceVim). Teaches you how to hack SpaceVim.
 
 ## User experiences
