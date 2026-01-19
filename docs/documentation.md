@@ -107,7 +107,7 @@ transient state buffer. Additional information may as well be displayed in it.
 
 Move Text Transient State:
 
-![Move Text Transient State](https://img.spacevim.org/28489559-4fbc1930-6ef8-11e7-9d5a-716fe8dbb881.png)
+![Move Text Transient State](img/spacevim-demo-transient-states.png)
 
 ## Update and Rollback
 
