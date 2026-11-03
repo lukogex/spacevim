@@ -7,8 +7,9 @@ description: "Adapter interface to the Neovim Lua standard library."
 
 <!-- vim-markdown-toc GFM -->
 
-- [Intro](#intro)
-- [Additional Functions](#additional-functions)
+  - [Intro](#intro)
+- [TODO: The following is deprecated, move whereever planery will be!](#todo-the-following-is-deprecated-move-whereever-planery-will-be)
+  - [Additional Functions](#additional-functions)
 
 <!-- vim-markdown-toc -->
 
@@ -47,6 +48,7 @@ flowchart LR
 A[Spacevim] --> B[spacevim.api.*] --> C[spacevim.api.vim.adapter] --> D[Lua standard library]
 ```
 
+# TODO: The following is deprecated, move whereever planery will be!
 ## Additional Functions
 
 **Type checking:**
