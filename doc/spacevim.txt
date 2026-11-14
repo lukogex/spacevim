@@ -117,7 +117,6 @@ CONTENTS                                                   *SpaceVim-contents*
     16. foldsearch............................... |SpaceVim-layers-foldsearch|
     17. format....................................... |SpaceVim-layers-format|
     18. framework#django................... |SpaceVim-layers-framework-django|
-    19. fzf............................................. |SpaceVim-layers-fzf|
     20. git............................................. |SpaceVim-layers-git|
     21. github....................................... |SpaceVim-layers-github|
     22. gtags......................................... |SpaceVim-layers-gtags|
@@ -2512,7 +2511,6 @@ KEY BINDINGS
   SPC b f         format current buffer or selection lines
 <
 
-
 ==============================================================================
 FRAMEWORK#DJANGO                            *SpaceVim-layers-framework-django*
 
@@ -2521,34 +2519,6 @@ django. This layer is not enabled by default, to enable it:
 >
   [[layers]]
     name = 'framework#django'
-<
-
-
-==============================================================================
-FZF                                                      *SpaceVim-layers-fzf*
-
-This layer provides fuzzy finder feature which is based on `fzf`. This layer
-is not loaded by default. To use this layer:
->
-  [[layers]]
-    name = 'fzf'
-<
-KEY BINDINGS
-
-The following key bindings will be enabled when this layer is loaded:
->
-  Key bindings      Description
-  SPC p f / Ctrl-p  search files in current directory
-  <Leader> f SPC    Fuzzy find menu:CustomKeyMaps
-  <Leader> f e      Fuzzy find register
-  <Leader> f h      Fuzzy find history/yank
-  <Leader> f j      Fuzzy find jump, change
-  <Leader> f l      Fuzzy find location list
-  <Leader> f m      Fuzzy find output messages
-  <Leader> f o      Fuzzy find functions
-  <Leader> f t      Fuzzy find tags
-  <Leader> f q      Fuzzy find quick fix
-  <Leader> f p      Fuzzy find bundle plugins
 <
 
 ==============================================================================

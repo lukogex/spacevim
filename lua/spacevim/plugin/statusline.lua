@@ -621,7 +621,6 @@ local special_statusline = {
   spacevimTabsManager = function()
     return simple_name('TabsManager')
   end,
-  fzf = function() end, -- todo
   spacevimFlyGrep = function() end, -- todo
   TransientState = function()
     return '%#spacevim_statusline_ia# Transient State %#spacevim_statusline_a_spacevim_statusline_b#'

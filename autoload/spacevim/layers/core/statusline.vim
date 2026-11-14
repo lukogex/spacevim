@@ -687,14 +687,6 @@ function! spacevim#layers#core#statusline#get(...) abort
   elseif &filetype ==# 'spacevimTabsManager'
     return '%#spacevim_statusline_a#' . s:winnr(1) . '%#spacevim_statusline_a_spacevim_statusline_b#' . s:lsep
           \ . '%#spacevim_statusline_b# TabsManager %#spacevim_statusline_b_spacevim_statusline_c#' . s:lsep . ' '
-  elseif &filetype ==# 'fzf'
-    return '%#spacevim_statusline_a_bold# FZF %#spacevim_statusline_a_spacevim_statusline_b#' . s:lsep
-          \ . '%#spacevim_statusline_b# %{spacevim#layers#fzf#sources()} %#spacevim_statusline_b_spacevim_statusline_c#' . s:lsep
-  elseif &filetype ==# 'unite'
-    return '%#spacevim_statusline_a_bold#%{spacevim#layers#core#statusline#unite_mode()} Unite '
-          \ . '%#spacevim_statusline_a_bold_spacevim_statusline_b#' . s:lsep . ' %{get(unite#get_context(), "buffer_name", "")} '
-          \ . '%#spacevim_statusline_b_spacevim_statusline_c#' . s:lsep . ' '
-          \ . '%#spacevim_statusline_c# %{unite#get_status_string()} '
   elseif &filetype ==# 'spacevimFlyGrep'
     return '%#spacevim_statusline_a_bold# FlyGrep %#spacevim_statusline_a_spacevim_statusline_b#' . s:lsep
           \ . '%#spacevim_statusline_b# %{spacevim#plugins#flygrep#mode()} %#spacevim_statusline_b_spacevim_statusline_c#' . s:lsep
