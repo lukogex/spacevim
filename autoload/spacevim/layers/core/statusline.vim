@@ -83,14 +83,6 @@ if has('nvim-0.10.0')
     return v:lua.require('spacevim.plugin.statusline').config()
   endfunction
 
-  function! spacevim#layers#core#statusline#ctrlp(focus, byfname, regex, prev, item, next, marked) abort
-    return v:lua.require('spacevim.plugin.statusline').ctrlp(a:focus, a:byfname, a:regex, a:prev, a:item, a:next, a:marked)
-  endfunction
-
-  function! spacevim#layers#core#statusline#ctrlp_status(str) abort
-    return v:lua.require('spacevim.plugin.statusline').ctrlp_status(a:str)
-  endfunction
-
   function! spacevim#layers#core#statusline#jump(i) abort
     return v:lua.require('spacevim.plugin.statusline').jump(a:i)
   endfunction
@@ -943,10 +935,6 @@ function! spacevim#layers#core#statusline#config() abort
   endfunction
   let g:tagbar_status_func = 'TagbarStatusline'
   let g:unite_force_overwrite_statusline = 0
-  let g:ctrlp_status_func = {
-        \ 'main': 'spacevim#layers#core#statusline#ctrlp',
-        \ 'prog': 'spacevim#layers#core#statusline#ctrlp_status',
-        \ }
   if filereadable(expand(g:spacevim_data_dir . 'spacevim/major_mode.json')) && s:major_mode_cache
     " the major mode is cashed in: ~\.cache\spacevim\major_mode.json
     call spacevim#logger#debug('load cache from major_mode.json')
@@ -990,24 +978,6 @@ endfunction
 " |
 " +- a:marked  : The number of marked files, or a comma separated list of
 "                the marked filenames.
-
-" @vimlint(EVL103, 1, a:regex)
-" @vimlint(EVL103, 1, a:marked)
-function! spacevim#layers#core#statusline#ctrlp(focus, byfname, regex, prev, item, next, marked) abort
-  return s:STATUSLINE.build([' Ctrlp ', ' ' . a:prev . ' ', ' ' . a:item . ' ', ' ' . a:next . ' '],
-        \ [' ' . a:focus . ' ', ' ' . a:byfname . ' ', ' ' . getcwd() . ' '], s:lsep, s:rsep, '', '',
-        \ 'spacevim_statusline_a_bold', 'spacevim_statusline_b', 'spacevim_statusline_c', 'spacevim_statusline_z', winwidth(winnr()))
-endfunction
-" @vimlint(EVL103, 0, a:regex)
-" @vimlint(EVL103, 0, a:marked)
-
-" a:str : Either the number of files scanned so far, or a string indicating
-"         the current directory is being scanned with a user_command.
-function! spacevim#layers#core#statusline#ctrlp_status(str) abort
-  return s:STATUSLINE.build([' Ctrlp ', ' ' . a:str . ' '],
-        \ [' ' . getcwd() . ' '], s:lsep, s:rsep, '', '',
-        \ 'spacevim_statusline_a', 'spacevim_statusline_b', 'spacevim_statusline_c', 'spacevim_statusline_z', winwidth(winnr()))
-endfunction
 
 function! spacevim#layers#core#statusline#jump(i) abort
   if s:WIN.win_count() >= a:i

@@ -83,10 +83,6 @@ function! spacevim#layers#fuzzy#config() abort
         \ ],
         \ 1)
 
-  "@todo add resume support for ctrlp: SPC r l
-
-
-  "@fixme ctrlp colorschemes support
   let lnum = expand('<slnum>') + s:lnum - 1
   call spacevim#mapping#space#def('nnoremap', ['T', 's'], 'CtrlPColorscheme',
         \ ['fuzzy-find-colorschemes',

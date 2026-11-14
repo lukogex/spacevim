@@ -853,21 +853,6 @@ function M.toggle_section(name)
   end
   vim.opt_local.statusline = M.get(1)
 end
-function M.ctrlp_status(str)
-  return statusline.build(
-    { ' Ctrlp ', ' ' .. str .. ' ' },
-    { ' ' .. vim.fn.getcwd() .. ' ' },
-    lsep,
-    rsep,
-    '',
-    '',
-    'spacevim_statusline_a',
-    'spacevim_statusline_b',
-    'spacevim_statusline_c',
-    'spacevim_statusline_z',
-    vim.fn.winwidth(vim.fn.winnr())
-  )
-end
 function M.config()
   if separators[vim.g.spacevim_statusline_separator] then
     lsep = separators[vim.g.spacevim_statusline_separator][1]
@@ -956,10 +941,6 @@ function M.config()
   end
   vim.g.tagbar_status_func = TagbarStatusline
   vim.g.unite_force_overwrite_statusline = 0
-  vim.g.ctrlp_status_func = {
-    main = 'spacevim#layers#core#statusline#ctrlp',
-    prog = 'spacevim#layers#core#statusline#ctrlp_status',
-  }
   if
     vim.fn.filereadable(vim.fn.expand(vim.g.spacevim_data_dir .. 'spacevim/major_mode.json')) == 1
     and major_mode_cache
@@ -980,21 +961,6 @@ function M.config()
       end
     end
   end
-end
-function M.ctrlp(focus, byfname, _, prev, item, next, _)
-  return statusline.build(
-    { ' Ctrlp ', ' ' .. prev .. ' ', ' ' .. item .. ' ', ' ' .. next .. ' ' },
-    { ' ' .. focus .. ' ', ' ' .. byfname .. ' ', ' ' .. vim.fn.getcwd() .. ' ' },
-    lsep,
-    rsep,
-    '',
-    '',
-    'spacevim_statusline_a_bold',
-    'spacevim_statusline_b',
-    'spacevim_statusline_c',
-    'spacevim_statusline_z',
-    vim.fn.winwidth(vim.fn.winnr())
-  )
 end
 function M.jump(i)
   pcall(function()

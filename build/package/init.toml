@@ -42,9 +42,6 @@
   name = "cscope"
 
 [[layers]]
-  name = "ctrlp"
-
-[[layers]]
   name = "debug"
 
 [[layers]]

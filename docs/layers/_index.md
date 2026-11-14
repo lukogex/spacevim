@@ -78,7 +78,6 @@ call spacevim#dev#layers#update()
 | [core#tabline](core/tabline.md) | spacevim core#tabline layer provides a better tabline for Spacevim. |
 | [core](core.md) | Spacevim core layer provides many default key bindings and features. |
 | [cscope](cscope.md) | cscope layer provides a smart [cscope](https://cscope.sourceforge.net/) and [pycscope](https://github.com/portante/pycscope) helper for spacevim, help users win at cscope. |
-| [ctrlp](ctrlp.md) | This layers provide a heavily customized ctrlp centric work-flow. |
 | [ctrlspace](ctrlspace.md) | This layer provides a customized [CtrlSpace](https://github.com/vim-ctrlspace/vim-ctrlspace) centric workflow. |
 | [debug](debug.md) | This layer provides debug workflow support in Spacevim. |
 | [default](default.md) | Spacevim's default layer contains no plugins, but It provides some better default config for spacevim. |

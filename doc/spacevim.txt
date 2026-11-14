@@ -111,7 +111,6 @@ CONTENTS                                                   *SpaceVim-contents*
     9. core#statusline...................... |SpaceVim-layers-core-statusline|
     10. core#tabline........................... |SpaceVim-layers-core-tabline|
     11. cscope....................................... |SpaceVim-layers-cscope|
-    12. ctrlp......................................... |SpaceVim-layers-ctrlp|
     13. debug......................................... |SpaceVim-layers-debug|
     14. edit........................................... |SpaceVim-layers-edit|
     15. exprfold................................... |SpaceVim-layers-exprfold|
@@ -2354,34 +2353,6 @@ The following key bindings will be added when this layer is loaded.
   SPC m c l         list cscope database
   SPC m c m         remove current cscope database
   SPC m c M         remove all cscope database
-<
-
-==============================================================================
-CTRLP                                                  *SpaceVim-layers-ctrlp*
-
-`ctrlp` layer provides fuzzy finder feature which is based on |ctrlp|. This
-layer is not loaded by default, to use this layer, you need to add following
-snippent in your configuration file.
->
-  [[layers]]
-    name = 'ctrlp'
-<
-
-KEY BINDINGS
-
-The following key bindings will be defined when `ctrlp` layer is loaded:
->
-   Key bindings         | Discription
-   -------------------- | -----------------------------
-   <Leader> f <Space>   | Fuzzy find menu:CustomKeyMaps
-   <Leader> f e         | Fuzzy find register
-   <Leader> f h         | Fuzzy find history/yank
-   <Leader> f j         | Fuzzy find jump, change
-   <Leader> f l         | Fuzzy find location list
-   <Leader> f m         | Fuzzy find output messages
-   <Leader> f o         | Fuzzy find outline
-   <Leader> f q         | Fuzzy find quick fix
-   <Leader> f r         | Resumes Unite window
 <
 
 ==============================================================================
