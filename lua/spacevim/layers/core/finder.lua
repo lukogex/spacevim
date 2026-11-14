@@ -64,3 +64,17 @@ return require("telescope").register_extension({
     menu = run,
   },
 })
+
+layer.mappings = function()
+  -- Ensure the 'a' submenu (Applications) and 'c' submenu (Agent Coding) exist
+  -- vim.cmd "let g:_spacevim_mappings_space.a = get(g:_spacevim_mappings_space, 'a', {'name' : '+Applications'})"
+  -- vim.cmd "let g:_spacevim_mappings_space.a.c = get(g:_spacevim_mappings_space.a, 'c', {'name' : '+Agent Coding'})"
+
+  vim.cmd "call spacevim#mapping#space#def('nnoremap', ['?'], 'Telescope menu menu=CustomKeyMaps default_text=[SPC]', ['show-mappings', [ 'SPC ? is to show mappings', '', 'Definition: ' . s:filename . ':' . lnum, ] ], 1)"
+
+  vim.cmd "call spacevim#mapping#space#def('nnoremap', ['f', 'f'], "exe 'Telescope find_files cwd=' . fnamemodify(bufname('%'), ':p:h')", ['find-files-in-buffer-directory', [ '[SPC f f] is to find files in the directory of the current buffer', '', 'Definition: ' . s:filename . ':' . lnum, ] ], 1)
+
+  -- vim.cmd "call spacevim#mapping#space#def('nnoremap', ['a', 'c', 'f'], 'lua require("opencode.context").add_file(expand("%:p"))', 'add-current-file-to-context', 1)"
+end
+
+return layer

@@ -28,7 +28,7 @@ function Layers.get_enabled()
   -- Function for getting Vimscript layers which are added by old plugin manager dein by now.
   -- return vim.fn['spacevim#layers#get']()
   -- TODO: Hardcoded the only new Lua layer by now.
-  return {'codingagent'}
+  return {'codingagent', 'finder'}
 end
 
 function Layers.isLoaded(layer)
