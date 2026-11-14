@@ -233,7 +233,6 @@ CONTENTS                                                   *SpaceVim-contents*
     131. lang#yang................................ |SpaceVim-layers-lang-yang|
     132. lang#zig.................................. |SpaceVim-layers-lang-zig|
     133. language server protocol....................... |SpaceVim-layers-lsp|
-    134. leaderf.................................... |SpaceVim-layers-leaderf|
     136. operator.................................. |SpaceVim-layers-operator|
     137. shell........................................ |SpaceVim-layers-shell|
     138. ssh............................................ |SpaceVim-layers-ssh|
@@ -2117,9 +2116,7 @@ snippets:
    SPC i s       | List all current snippets for inserting
    <Leader> f s  | Fuzzy find snippets
 <
-NOTE: `SPC i s` requires that at least one fuzzy search layer be loaded. If
-the `snippet_engine` is `neosnippet`. The fuzzy finder layer can be `leaderf`
-. For `ultisnips`, you can use `leaderf` layer.
+NOTE: `SPC i s` requires that at least one fuzzy search layer be loaded.
 
 ==============================================================================
 CHECKERS                                            *SpaceVim-layers-checkers*
@@ -6031,34 +6028,6 @@ USER AUTOCMD
 
   1. SpaceVimLspSetup: This User autocmd will be triggered after lsp setup
 function.
-
-==============================================================================
-LEADERF                                              *SpaceVim-layers-leaderf*
-
-This layer provides fuzzy finder feature which is based on |leaderf|, and this
-layer requires vim compiled with `+python` or `+python3`. This layer is not
-loaded by default. To use this layer:
->
-  [[layers]]
-    name = 'leaderf'
-<
-KEY BINDINGS
-
-The following key bindings will be enabled when this layer is loaded:
->
-  Key bindings      Description
-  SPC p f / Ctrl-p  search files in current directory
-  <Leader> f SPC    Fuzzy find menu:CustomKeyMaps
-  <Leader> f e      Fuzzy find register
-  <Leader> f h      Fuzzy find history/yank
-  <Leader> f j      Fuzzy find jump, change
-  <Leader> f l      Fuzzy find location list
-  <Leader> f m      Fuzzy find output messages
-  <Leader> f o      Fuzzy find functions
-  <Leader> f t      Fuzzy find tags
-  <Leader> f q      Fuzzy find quick fix
-  <Leader> f r      Resumes Unite window
-<
 
 ==============================================================================
 OPERATOR                                            *SpaceVim-layers-operator*

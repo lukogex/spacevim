@@ -284,8 +284,6 @@ local M = {}
 function M.list()
   if layer.isLoaded('fzf') then
     vim_compatible.cmd('FzfMenu Projects')
-  elseif layer.isLoaded('leaderf') then
-    vim_compatible.cmd("call spacevim#layers#leaderf#run_menu('Projects')")
   elseif layer.isLoaded('telescope') then
     vim_compatible.cmd('Telescope project')
   else

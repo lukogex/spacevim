@@ -195,7 +195,6 @@ call spacevim#dev#layers#update()
 | [lang#xml](lang/xml/)                                 | This layer is for xml development, provides syntax checking, indentation etc.                                                                                       |
 | [lang#zig](lang/zig/)                                 | This layer is for zig development, provides code runner support for zig files.                                                                                      |
 | [language-server-protocol](language-server-protocol.md) | This layers provides language server protocol for Neovim. |
-| [leaderf](leaderf/)                                   | This layer provides a heavily customized LeaderF centric workflow.                                                                                                   |
 | [shell](shell/)                                       | This layer provides shell support in spacevim                                                                                                                       |
 | [ssh](ssh/)                                           | This layer provides ssh support in spacevim                                                                                                                         |
 | [sudo](sudo/)                                         | sudo layer provides the ability to read and write files with elevated privileges in spacevim                                                                        |
