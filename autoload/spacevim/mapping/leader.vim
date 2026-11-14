@@ -233,50 +233,6 @@ function! spacevim#mapping#leader#defindWindowsLeader(key) abort
   endif
 endfunction
 
-function! spacevim#mapping#leader#defindDeniteLeader(key) abort
-  if !empty(a:key)
-    if a:key ==# 'F'
-      nnoremap <leader>F F
-    endif
-    exe 'nnoremap <silent><nowait> [denite] :<c-u>LeaderGuide "' .
-          \ a:key . '"<CR>'
-    exe 'nmap ' .a:key . ' [denite]'
-    let g:_spacevim_mappings_denite = {}
-    nnoremap <silent> [denite]r
-          \ :<C-u>Denite -resume<CR>
-    let g:_spacevim_mappings_denite.r = ['Denite -resume',
-          \ 'resume denite window']
-    nnoremap <silent> [denite]f  :<C-u>Denite file_rec<cr>
-    let g:_spacevim_mappings_denite.f = ['Denite file_rec', 'file_rec']
-    nnoremap <silent> [denite]i  :<C-u>Denite file_rec/git<cr>
-    let g:_spacevim_mappings_denite.i = ['Denite file_rec/git', 'git files']
-    nnoremap <silent> [denite]g  :<C-u>Denite grep<cr>
-    let g:_spacevim_mappings_denite.g = ['Denite grep', 'denite grep']
-    nnoremap <silent> [denite]t  :<C-u>Denite tag<CR>
-    let g:_spacevim_mappings_denite.t = ['Denite tag', 'denite tag']
-    nnoremap <silent> [denite]T  :<C-u>Denite tag:include<CR>
-    let g:_spacevim_mappings_denite.T = ['Denite tag/include',
-          \ 'denite tag/include']
-    nnoremap <silent> [denite]j  :<C-u>Denite jump<CR>
-    let g:_spacevim_mappings_denite.j = ['Denite jump', 'denite jump']
-    nnoremap <silent> [denite]h  :<C-u>Denite neoyank<CR>
-    let g:_spacevim_mappings_denite.h = ['Denite neoyank', 'denite neoyank']
-    nnoremap <silent> [denite]<C-h>  :<C-u>DeniteCursorWord help<CR>
-    let g:_spacevim_mappings_denite['<C-h>'] = ['DeniteCursorWord help',
-          \ 'denite with cursor word help']
-    nnoremap <silent> [denite]o  :<C-u>Denite -buffer-name=outline
-          \  -auto-preview outline<CR>
-    let g:_spacevim_mappings_denite.o = ['Denite outline', 'denite outline']
-    nnoremap <silent> [denite]e  :<C-u>Denite
-          \ -buffer-name=register register<CR>
-    let g:_spacevim_mappings_denite.e = ['Denite register', 'denite register']
-    nnoremap <silent> [denite]<Space> :Denite menu:CustomKeyMaps<CR>
-    let g:_spacevim_mappings_denite['<Space>'] = ['Denite menu:CustomKeyMaps',
-          \ 'denite customkeymaps']
-  endif
-endfunction
-
-
 function! spacevim#mapping#leader#getName(key) abort
   if a:key ==# ' '
     return '[SPC]'

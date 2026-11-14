@@ -1472,7 +1472,7 @@ Buffer manipulation commands (start with `b`):
 | -------------------- | ------------------------------------------------------------------------ |
 | `SPC <Tab>`          | switch to alternate buffer in the current window (switch back and forth) |
 | `SPC b .`            | buffer transient state                                                   |
-| `SPC b b` | switch to a buffer (via denite) |
+| `SPC b b` | switch to a buffer |
 | `SPC b d`            | kill the current buffer (does not delete the visited file)               |
 | `SPC b D`            | kill a visible buffer using vim-choosewin                                |
 | `SPC b Ctrl-d`       | kill other buffers                                                       |
@@ -1571,28 +1571,11 @@ All plugins can be easily discovered via `<Leader> f p`.
 
 ### Fuzzy finder
 
-Fuzzy finder provides a variety of efficient content searching key bindings,
-including file searching, outline searching, vim messages searching and register
-content searching.
+Fuzzy finder provides a variety of efficient content searching key bindings, including file searching, outline searching, vim messages searching and register content searching.
 
-Currently, there are 5 fuzzy finder layers:
+Currently, there is one fuzzy finder layer:
 
-- [`denite`](../layers/denite/) layer: based on `Shougo/denite.nvim`
-- [`leaderf`](../layers/leaderf/) layer: based on `Yggdroot/LeaderF`
-- [`ctrlp`](../layers/ctrlp/) layer: based on `ctrlpvim/ctrlp.vim`
-- [`fzf`](../layers/fzf/) layer: based on fzf
-- [`telescope`](../layers/telescope) layer: based on telescope.nvim
-
-These layers have the same key bindings and features. But they need different dependencies.
-
-Users only need to load one of these layers to be able to get these features.
-
-For example, to load the denite layer:
-
-```toml
-[[layers]]
-    name = "denite"
-```
+- [`finder`](../layers/finder) core finder layer based on telescope.nvim
 
 **Key bindings**
 
@@ -1608,24 +1591,6 @@ For example, to load the denite layer:
 | `<Leader> f o`       | Fuzzy find outline            |
 | `<Leader> f q`       | Fuzzy find quick fix          |
 | `<Leader> f r`       | Resumes Unite window          |
-
-**Differences between these layers**
-
-The above key bindings are only part of fuzzy finder layers, please read the layers's documentations.
-
-| Feature            | denite | leaderf | ctrlp | fzf |
-| ------------------ | :----: | :-----: | :---: | --- |
-| CustomKeyMaps menu |  yes   |   yes   |  no   | no  |
-| AddedPlugins menu  |  yes   |   yes   |  no   | no  |
-| register           |  yes   |   yes   |  yes  | yes |
-| file               |  yes   |   yes   |  yes  | yes |
-| yank history       |  yes   |   yes   |  no   | yes |
-| jump               |  yes   |   yes   |  yes  | yes |
-| location list      |  yes   |   yes   |  no   | yes |
-| outline            |  yes   |   yes   |  yes  | yes |
-| message            |  yes   |   yes   |  no   | yes |
-| quickfix list      |  yes   |   yes   |  yes  | yes |
-| resume windows     |  yes   |   yes   |  no   | no  |
 
 **Key bindings within the fuzzy finder buffer**
 
@@ -1871,8 +1836,8 @@ The `SPC j` prefix is for jumping, joining and splitting.
 | `SPC j d`    | jump to a listing of the current directory                                        |
 | `SPC j D`    | jump to a listing of the current directory (other window)                         |
 | `SPC j f`    | jump forward                                                                      |
-| `SPC j I`    | jump to a definition in any buffer (denite outline)                               |
-| `SPC j i`    | jump to a definition in buffer (denite outline)                                   |
+| `SPC j I` | jump to a definition in any buffer |
+| `SPC j i` | jump to a definition in buffer |
 | `SPC j j`    | jump to a character in the buffer (easymotion)                                    |
 | `SPC j J`    | jump to a suite of two characters in the buffer (easymotion)                      |
 | `SPC j k`    | jump to next line and indent it using auto-indent rules                           |
@@ -2007,9 +1972,19 @@ which contains short descriptions of all the mappings starting with `z`.
 
 ### Managing projects
 
-When you open a file, spacevim will change the current directory to the root
-directory of the project that contains this file. The project's root directory detection
-is based on the `project_rooter_patterns` in the `[options]` section, and the default value is:
+spacevim will change switch to project root automatically based on `project_rooter_patterns` option.
+By default it will find outermost directory by default, to find nearest directory,
+you need to change `project_rooter_outermost` to `false`.
+
+```toml
+[options]
+    project_rooter_outermost = false
+```
+
+If you want to list all recent opened project, you need to load a fuzzy finder layer.
+for example `telescope` layer, the the key binding `SPC p p` is available for you.
+When you open a file, spacevim will change the current directory to the root directory of the project that contains this file.
+The project's root directory detection is based on the `project_rooter_patterns` in the `[options]` section, and the default value is:
 
 ```toml
 [options]

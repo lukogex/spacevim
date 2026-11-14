@@ -183,5 +183,5 @@ To disable this feature, set the variable `auto_completion_enable_snippets_in_po
 | `<Leader> f s` | Fuzzy find Ultisnips snippets if `snippet_engine = "ultisnips"` and the layer [`telescope`](../telescope) is used. Thanks to [telescope-ultisnips.nvim](https://github.com/fhill2/telescope-ultisnips.nvim)|
 
 NOTE: `SPC i s` requires that at least one fuzzy search layer be loaded. If the `snippet_engine` is `neosnippet`.
-The fuzzy finder layer can be `leaderf` or `denite`.
+The fuzzy finder layer can be `leaderf`.
 For `ultisnips`, you can use `leaderf` layer.

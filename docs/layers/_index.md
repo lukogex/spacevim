@@ -82,7 +82,6 @@ call spacevim#dev#layers#update()
 | [ctrlspace](ctrlspace.md) | This layer provides a customized [CtrlSpace](https://github.com/vim-ctrlspace/vim-ctrlspace) centric workflow. |
 | [debug](debug.md) | This layer provides debug workflow support in Spacevim. |
 | [default](default.md) | Spacevim's default layer contains no plugins, but It provides some better default config for spacevim. |
-| [denite](denite.md)                                     | This layers provide's a heavily customized Denite centric workflow.                                                                                                  |
 | [edit](edit.md)                                         | Improve code edit experience in spacevim, provides more text objects.                                                                                               |
 | [floobits](floobits.md)                                 | This layer adds support for the peer programming tool [floobits](https://github.com/floobits) to spacevim.                                                                                         |
 | [foldsearch](foldsearch.md)                             | This layer provides functions that fold away lines that don't match a specific search pattern.                                                                      |

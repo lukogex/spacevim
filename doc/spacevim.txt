@@ -566,7 +566,7 @@ The background of colorscheme. Default is 'dark'.
 ==============================================================================
 COMMANDLINE_PROMPT                       *SpaceVim-options-commandline_prompt*
 
-Config the command line prompt for flygrep and denite etc. Default is `>`, for
+Config the command line prompt for flygrep. Default is `>`, for
 example:
 >
   commandline_prompt = '➭'
@@ -1682,7 +1682,7 @@ option:
 <
 
                                                *g:spacevim_commandline_prompt*
-Config the command line prompt for flygrep and denite etc.
+Config the command line prompt for flygrep.
 
                                                       *g:spacevim_todo_labels*
 Option for setting todo labels in current project.
@@ -2119,7 +2119,7 @@ snippets:
 <
 NOTE: `SPC i s` requires that at least one fuzzy search layer be loaded. If
 the `snippet_engine` is `neosnippet`. The fuzzy finder layer can be `leaderf`
-or `denite`. For `ultisnips`, you can use `leaderf` layer.
+. For `ultisnips`, you can use `leaderf` layer.
 
 ==============================================================================
 CHECKERS                                            *SpaceVim-layers-checkers*

@@ -51,9 +51,6 @@
   name = "default"
 
 [[layers]]
-  name = "denite"
-
-[[layers]]
   name = "edit"
 
 [[layers]]

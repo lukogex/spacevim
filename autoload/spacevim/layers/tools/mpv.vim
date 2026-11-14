@@ -65,9 +65,6 @@ function! s:list_music() abort
   call s:load_musics()
   if spacevim#layers#isLoaded('leaderf')
     Leaderf menu --name MpvPlayer
-  elseif spacevim#layers#isLoaded('denite')
-    Denite menu:MpvPlayer
-  else
   endif
 endfunction
 

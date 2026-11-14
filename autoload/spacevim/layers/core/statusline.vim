@@ -103,14 +103,6 @@ if has('nvim-0.10.0')
     return v:lua.require('spacevim.plugin.statusline').mode_text(a:mode)
   endfunction
 
-  function! spacevim#layers#core#statusline#denite_status(argv) abort
-    return v:lua.require('spacevim.plugin.statusline').denite_status(a:argv)
-  endfunction
-
-  function! spacevim#layers#core#statusline#denite_mode() abort
-    return v:lua.require('spacevim.plugin.statusline').denite_mode()
-  endfunction
-
   function! spacevim#layers#core#statusline#unite_mode() abort
     return v:lua.require('spacevim.plugin.statusline').unite_mode()
   endfunction
@@ -706,17 +698,6 @@ function! spacevim#layers#core#statusline#get(...) abort
   elseif &filetype ==# 'fzf'
     return '%#spacevim_statusline_a_bold# FZF %#spacevim_statusline_a_spacevim_statusline_b#' . s:lsep
           \ . '%#spacevim_statusline_b# %{spacevim#layers#fzf#sources()} %#spacevim_statusline_b_spacevim_statusline_c#' . s:lsep
-  elseif &filetype ==# 'denite'
-    return '%#spacevim_statusline_a_bold# %{spacevim#layers#core#statusline#denite_mode()} '
-          \ . '%#spacevim_statusline_a_bold_spacevim_statusline_b#' . s:lsep . ' '
-          \ . '%#spacevim_statusline_b#%{spacevim#layers#core#statusline#denite_status("sources")} %#spacevim_statusline_b_spacevim_statusline_z#' . s:lsep . ' '
-          \ . '%#spacevim_statusline_z#%=%#spacevim_statusline_c_spacevim_statusline_z#' . s:rsep
-          \ . '%#spacevim_statusline_c# %{spacevim#layers#core#statusline#denite_status("path") . spacevim#layers#core#statusline#denite_status("linenr")}'
-  elseif &filetype ==# 'denite-filter'
-    return '%#spacevim_statusline_a_bold#'
-          \ . ' Filter '
-          \ . '%#spacevim_statusline_a_spacevim_statusline_b#'
-          \ . s:lsep
   elseif &filetype ==# 'unite'
     return '%#spacevim_statusline_a_bold#%{spacevim#layers#core#statusline#unite_mode()} Unite '
           \ . '%#spacevim_statusline_a_bold_spacevim_statusline_b#' . s:lsep . ' %{get(unite#get_context(), "buffer_name", "")} '
@@ -1096,46 +1077,6 @@ function! spacevim#layers#core#statusline#mode_text(mode) abort
     let mode_text = ' VISUAL'
   endif
   return past_mode . mode_text
-endfunction
-
-
-function! spacevim#layers#core#statusline#denite_status(argv) abort
-  if exists('*denite#get_status_mode')
-    let denite_ver = 2
-  else
-    let denite_ver = 3
-  endif
-  if denite_ver == 3
-    return denite#get_status(a:argv)
-  else
-    return denite#get_status_{a:argv}()
-  endif
-endfunction
-
-function! spacevim#layers#core#statusline#denite_mode() abort
-  let t = s:colors_template
-  if exists('*denite#get_status_mode')
-    let denite_ver = 2
-  else
-    let denite_ver = 3
-  endif
-
-  if denite_ver == 3
-    let dmode = 'Denite'
-  else
-    " this can not be changed, as it works in old denite
-    let dmode = split(denite#get_status_mode())[1]
-    if get(w:, 'spacevim_statusline_mode', '') != dmode
-      if dmode ==# 'NORMAL'
-        exe 'hi! spacevim_statusline_a_bold cterm=bold gui=bold ctermbg=' . t[0][2] . ' ctermfg=' . t[0][3] . ' guibg=' . t[0][1] . ' guifg=' . t[0][0]
-      elseif dmode ==# 'INSERT'
-        exe 'hi! spacevim_statusline_a_bold cterm=bold gui=bold ctermbg=' . t[4][3] . ' ctermfg=' . t[4][2] . ' guibg=' . t[4][1] . ' guifg=' . t[4][0]
-      endif
-      call s:HI.hi_separator('spacevim_statusline_a_bold', 'spacevim_statusline_b')
-      let w:spacevim_statusline_mode = dmode
-    endif
-  endif
-  return dmode
 endfunction
 
 function! spacevim#layers#core#statusline#unite_mode() abort

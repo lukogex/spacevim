@@ -15,7 +15,6 @@ call deoplete#custom#option({
       \ 'smart_case'          :  get(g:, 'deoplete#enable_smart_case', 1),
       \ 'camel_case'          :  get(g:, 'deoplete#enable_camel_case', 1),
       \ 'refresh_always'      :  get(g:, 'deoplete#enable_refresh_always', 1),
-      \ 'nofile_complete_filetypes' : ['denite-filter'],
       \ })
 
 if !spacevim#layers#lsp#check_filetype('java')
@@ -102,9 +101,6 @@ call deoplete#custom#source('racer', 'mark', '')
 
 " vim
 call deoplete#custom#option('ignore_sources', {'vim': ['tag']})
-
-" denite
-call deoplete#custom#option('ignore_sources', {'denite-filter': ['denite', 'buffer', 'around', 'member', 'neosnippet']})
 
 " clojure
 call deoplete#custom#option('keyword_patterns', {
