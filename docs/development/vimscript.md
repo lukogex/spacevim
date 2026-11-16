@@ -114,7 +114,8 @@ Use :unlet for variables that may change types, particularly those assigned insi
 
 **Organize functionality into modular plugins**
 
-Group your functionality as a plugin, unified in one directory (or code repository) which shares your plugin's name (with a "vim-" prefix or ".vim" suffix if desired). It should be split into plugin/, autoload/, etc. subdirectories as necessary, and it should declare metadata in the addon-info.json format (see the Vim documentation for details).
+Group your functionality as a plugin, unified in one directory (or code repository) which shares your plugin's name (with a "vim-" prefix or ".vim" suffix if desired).
+It should be split into plugin/, autoload/, etc. subdirectories as necessary, and it should declare metadata in the addon-info.json format (see the Vim documentation for details).
 
 ### Functions
 

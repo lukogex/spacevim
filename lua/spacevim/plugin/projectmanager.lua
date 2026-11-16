@@ -282,13 +282,7 @@ end
 local M = {}
 
 function M.list()
-  if layer.isLoaded('denite') then
-    vim_compatible.cmd('Denite menu:Projects')
-  elseif layer.isLoaded('fzf') then
-    vim_compatible.cmd('FzfMenu Projects')
-  elseif layer.isLoaded('leaderf') then
-    vim_compatible.cmd("call spacevim#layers#leaderf#run_menu('Projects')")
-  elseif layer.isLoaded('telescope') then
+  if layer.isLoaded('telescope') then
     vim_compatible.cmd('Telescope project')
   else
     logger.warn('fuzzy find layer is needed to find project!')
@@ -405,9 +399,7 @@ end
 function M.current_root()
   local bufname = fn.bufname('%')
   if
-    bufname:match('%[denite%]')
-    or bufname:match('denite-filter')
-    or bufname:match('%[defx%]')
+    bufname:match('%[defx%]')
     or bufname:match('^git://') -- this is for git.vim
     or vim.fn.empty(bufname) == 1
     or bufname:match('^neo%-tree') -- this is for neo-tree.nvim

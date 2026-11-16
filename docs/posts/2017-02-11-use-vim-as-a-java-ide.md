@@ -137,8 +137,7 @@ The default outline plugin is tagbar, and the key binding is `F2`. This key bind
 
 ![java outline](https://img.spacevim.org/53250502-7c313d80-36f5-11e9-8fa2-8437ecf57a78.png)
 
-To fuzzy find outline in current buffer, you need to enable a fuzzy find layer, for example denite layer,
-then press `Leader f o`:
+To fuzzy find outline in current buffer, you need to enable a fuzzy find layer, then press `Leader f o`:
 
 ![java fuzzy outline](https://img.spacevim.org/53250728-f1047780-36f5-11e9-923d-0b34568f9566.gif)
 

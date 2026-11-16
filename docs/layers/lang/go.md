@@ -95,7 +95,7 @@ go install github.com/jstemmer/gotags@latest
 | `SPC l I`    | implement stubs                                |
 | `SPC l k`    | add tags                                       |
 | `SPC l K`    | remove tags                                    |
-| `SPC l l`    | list declarations, need `ctrlp` or `fzf` layer |
+| `SPC l l` | list declarations |
 | `SPC l m`    | format imports                                 |
 | `SPC l M`    | add import                                     |
 | `SPC l r`    | go run                                         |

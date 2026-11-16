@@ -454,24 +454,9 @@ let g:unite_source_menu_menus.RunnerLanguage = {'description':
 let g:unite_source_menu_menus.RunnerLanguage.command_candidates =
       \ get(g:unite_source_menu_menus.RunnerLanguage,'command_candidates', [])
 
-function! spacevim#plugins#runner#select_language() abort
-  " @todo use denite or unite to select language
-  " and set the s:selected_language
-  " the all language is keys(s:runners)
-  if spacevim#layers#isLoaded('denite')
-    Denite menu:RunnerLanguage
-  elseif spacevim#layers#isLoaded('leaderf')
-    Leaderf menu --name RunnerLanguage
-  endif
-endfunction
-
 function! spacevim#plugins#runner#set_language(lang) abort
-  " @todo use denite or unite to select language
-  " and set the s:selected_language
-  " the all language is keys(s:runners)
   let s:selected_language = a:lang
 endfunction
-
 
 function! spacevim#plugins#runner#run_task(task) abort
   let isBackground = get(a:task, 'isBackground', 0)

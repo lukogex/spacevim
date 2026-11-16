@@ -72,16 +72,18 @@ let s:filename = expand('<sfile>:~')
 let s:lnum = expand('<slnum>') + 2
 function! spacevim#layers#telescope#config() abort
 
-  let lnum = expand('<slnum>') + s:lnum - 1
-  call spacevim#mapping#space#def('nnoremap', ['?'], 'Telescope menu menu=CustomKeyMaps default_text=[SPC]',
-        \ ['show-mappings',
-        \ [
-        \ 'SPC ? is to show mappings',
-        \ '',
-        \ 'Definition: ' . s:filename . ':' . lnum,
-        \ ]
-        \ ],
-        \ 1)
+  " Commented out was moved to new lua finder layer.
+
+  " let lnum = expand('<slnum>') + s:lnum - 1
+  " call spacevim#mapping#space#def('nnoremap', ['?'], 'Telescope menu menu=CustomKeyMaps default_text=[SPC]',
+        " \ ['show-mappings',
+        " \ [
+        " \ 'SPC ? is to show mappings',
+        " \ '',
+        " \ 'Definition: ' . s:filename . ':' . lnum,
+        " \ ]
+        " \ ],
+        " \ 1)
 
   let lnum = expand('<slnum>') + s:lnum - 1
   call spacevim#mapping#space#def('nnoremap', ['h', '[SPC]'], 'call call('
@@ -141,17 +143,17 @@ function! spacevim#layers#telescope#config() abort
         \ ],
         \ 1)
 
-  let lnum = expand('<slnum>') + s:lnum - 1
-  call spacevim#mapping#space#def('nnoremap', ['f', 'f'],
-        \ "exe 'Telescope find_files cwd=' . fnamemodify(bufname('%'), ':p:h')",
-        \ ['find-files-in-buffer-directory',
-        \ [
-        \ '[SPC f f] is to find files in the directory of the current buffer',
-        \ '',
-        \ 'Definition: ' . s:filename . ':' . lnum,
-        \ ]
-        \ ]
-        \ , 1)
+  " let lnum = expand('<slnum>') + s:lnum - 1
+  " call spacevim#mapping#space#def('nnoremap', ['f', 'f'],
+        " \ "exe 'Telescope find_files cwd=' . fnamemodify(bufname('%'), ':p:h')",
+        " \ ['find-files-in-buffer-directory',
+        " \ [
+        " \ '[SPC f f] is to find files in the directory of the current buffer',
+        " \ '',
+        " \ 'Definition: ' . s:filename . ':' . lnum,
+        " \ ]
+        " \ ]
+        " \ , 1)
 
   let lnum = expand('<slnum>') + s:lnum - 1
   call spacevim#mapping#space#def('nnoremap', ['p', 'f'],

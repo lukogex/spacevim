@@ -169,9 +169,6 @@
 "    <Leader> f s  | Fuzzy find snippets
 " <
 " NOTE: `SPC i s` requires that at least one fuzzy search layer be loaded.
-" If the `snippet_engine` is `neosnippet`. The fuzzy finder layer can be
-" `leaderf`, `denite` or `unite`. For `ultisnips`, you can use `leaderf` layer.
-
 
 if exists('s:return_key_behavior')
   finish

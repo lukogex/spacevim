@@ -621,14 +621,6 @@ local special_statusline = {
   spacevimTabsManager = function()
     return simple_name('TabsManager')
   end,
-  fzf = function() end, -- todo
-  denite = function() end, -- todo
-  ['denite-filter'] = function()
-    return '%#spacevim_statusline_a_bold#'
-      .. ' Filter '
-      .. '%#spacevim_statusline_a_spacevim_statusline_b#'
-      .. lsep
-  end,
   spacevimFlyGrep = function() end, -- todo
   TransientState = function()
     return '%#spacevim_statusline_ia# Transient State %#spacevim_statusline_a_spacevim_statusline_b#'
@@ -860,21 +852,6 @@ function M.toggle_section(name)
   end
   vim.opt_local.statusline = M.get(1)
 end
-function M.ctrlp_status(str)
-  return statusline.build(
-    { ' Ctrlp ', ' ' .. str .. ' ' },
-    { ' ' .. vim.fn.getcwd() .. ' ' },
-    lsep,
-    rsep,
-    '',
-    '',
-    'spacevim_statusline_a',
-    'spacevim_statusline_b',
-    'spacevim_statusline_c',
-    'spacevim_statusline_z',
-    vim.fn.winwidth(vim.fn.winnr())
-  )
-end
 function M.config()
   if separators[vim.g.spacevim_statusline_separator] then
     lsep = separators[vim.g.spacevim_statusline_separator][1]
@@ -963,10 +940,6 @@ function M.config()
   end
   vim.g.tagbar_status_func = TagbarStatusline
   vim.g.unite_force_overwrite_statusline = 0
-  vim.g.ctrlp_status_func = {
-    main = 'spacevim#layers#core#statusline#ctrlp',
-    prog = 'spacevim#layers#core#statusline#ctrlp_status',
-  }
   if
     vim.fn.filereadable(vim.fn.expand(vim.g.spacevim_data_dir .. 'spacevim/major_mode.json')) == 1
     and major_mode_cache
@@ -987,21 +960,6 @@ function M.config()
       end
     end
   end
-end
-function M.ctrlp(focus, byfname, _, prev, item, next, _)
-  return statusline.build(
-    { ' Ctrlp ', ' ' .. prev .. ' ', ' ' .. item .. ' ', ' ' .. next .. ' ' },
-    { ' ' .. focus .. ' ', ' ' .. byfname .. ' ', ' ' .. vim.fn.getcwd() .. ' ' },
-    lsep,
-    rsep,
-    '',
-    '',
-    'spacevim_statusline_a_bold',
-    'spacevim_statusline_b',
-    'spacevim_statusline_c',
-    'spacevim_statusline_z',
-    vim.fn.winwidth(vim.fn.winnr())
-  )
 end
 function M.jump(i)
   pcall(function()
@@ -1135,82 +1093,6 @@ function M.check_section(name)
     end
   end
   return false
-end
-
-function M.denite_status(argv)
-  local denite_ver ---@type number
-  if vim.fn.exists('*denite#get_status_mode') == 1 then
-    denite_ver = 2
-  else
-    denite_ver = 3
-  end
-  if denite_ver == 3 then
-    return vim.fn['denite#get_status'](argv)
-  else
-    return vim.fn['denite#get_status_' .. argv]()
-  end
-end
-function M.denite_mode()
-  local t = colors_template
-  local denite_ver ---@type number
-  if vim.fn.exists('*denite#get_status_mode') == 1 then
-    denite_ver = 2
-  else
-    denite_ver = 3
-  end
-  if denite_ver == 3 then
-    return 'Denite'
-  else
-    local dmode = vim.fn.split(vim.fn['denite#get_status_mode']())[2]
-    if vim.w.spacevim_statusline_mode ~= dmode then
-      if dmode == 'NORMAL' then
-        vim.api.nvim_set_hl(0, 'spacevim_statusline_a_bold', {
-          bold = true,
-          fg = t[1][1],
-          bg = t[1][2],
-          ctermfg = t[1][4],
-          ctermbg = t[1][3],
-        })
-      else
-        vim.api.nvim_set_hl(0, 'spacevim_statusline_a_bold', {
-          bold = true,
-          fg = t[5][1],
-          bg = t[5][2],
-          ctermfg = t[5][3],
-          ctermbg = t[5][4],
-        })
-      end
-      highlight.hi_separator('spacevim_statusline_a_bold', 'spacevim_statusline_b')
-      vim.w.spacevim_statusline_mode = dmode
-    end
-    return dmode
-  end
-end
-function M.unite_mode()
-  local t = colors_template
-  local dmode = vim.fn.mode()
-  if vim.w.spacevim_statusline_mode ~= dmode then
-    if dmode == 'n' then
-      vim.api.nvim_set_hl(0, 'spacevim_statusline_a_bold', {
-        bold = true,
-        fg = t[1][1],
-        bg = t[1][2],
-        ctermfg = t[1][4],
-        ctermbg = t[1][3],
-      })
-    elseif dmode == 'i' then
-      vim.api.nvim_set_hl(0, 'spacevim_statusline_a_bold', {
-        bold = true,
-        fg = t[5][1],
-        bg = t[5][2],
-        ctermfg = t[5][3],
-        ctermbg = t[5][4],
-      })
-    end
-    highlight.hi_separator('spacevim_statusline_a_bold', 'spacevim_statusline_b')
-    vim.w.spacevim_statusline_mode = dmode
-  end
-  return dmode
 end
 
 function M.register_sections(name, func)

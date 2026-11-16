@@ -42,16 +42,10 @@
   name = "cscope"
 
 [[layers]]
-  name = "ctrlp"
-
-[[layers]]
   name = "debug"
 
 [[layers]]
   name = "default"
-
-[[layers]]
-  name = "denite"
 
 [[layers]]
   name = "edit"
@@ -61,9 +55,6 @@
 
 [[layers]]
   name = "format"
-
-[[layers]]
-  name = "fzf"
 
 [[layers]]
   name = "git"
@@ -196,9 +187,6 @@
 
 [[layers]]
   name = "lsp"
-
-[[layers]]
-  name = "leaderf"
 
 [[layers]]
   name = "shell"

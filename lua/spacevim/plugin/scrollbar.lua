@@ -19,7 +19,6 @@ local default_conf = {
   excluded_filetypes = {
     'startify',
     'git-commit',
-    'leaderf',
     'NvimTree',
     'tagbar',
     'defx',

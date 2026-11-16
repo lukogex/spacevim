@@ -16,11 +16,10 @@ description: "A guide for managing spacevim with layers, how to enable and disab
 
 ## Introduction
 
-spacevim is a community-driven Vim distribution that seeks to provides a layers feature.
+Spacevim is a community-driven Vim distribution that seeks to provides a layers feature.
 
 Layers help collecting related packages together to provides features.
-This approach helps keep configuration organized and reduces overhead for the user by
-keeping them from having to think about what packages to install.
+This approach helps keep configuration organized and reduces overhead for the user by keeping them from having to think about what packages to install.
 
 ### Enable layers
 
@@ -79,16 +78,13 @@ call spacevim#dev#layers#update()
 | [core#tabline](core/tabline.md) | spacevim core#tabline layer provides a better tabline for Spacevim. |
 | [core](core.md) | Spacevim core layer provides many default key bindings and features. |
 | [cscope](cscope.md) | cscope layer provides a smart [cscope](https://cscope.sourceforge.net/) and [pycscope](https://github.com/portante/pycscope) helper for spacevim, help users win at cscope. |
-| [ctrlp](ctrlp.md) | This layers provide a heavily customized ctrlp centric work-flow. |
 | [ctrlspace](ctrlspace.md) | This layer provides a customized [CtrlSpace](https://github.com/vim-ctrlspace/vim-ctrlspace) centric workflow. |
 | [debug](debug.md) | This layer provides debug workflow support in Spacevim. |
 | [default](default.md) | Spacevim's default layer contains no plugins, but It provides some better default config for spacevim. |
-| [denite](denite.md)                                     | This layers provide's a heavily customized Denite centric workflow.                                                                                                  |
 | [edit](edit.md)                                         | Improve code edit experience in spacevim, provides more text objects.                                                                                               |
 | [floobits](floobits.md)                                 | This layer adds support for the peer programming tool [floobits](https://github.com/floobits) to spacevim.                                                                                         |
 | [foldsearch](foldsearch.md)                             | This layer provides functions that fold away lines that don't match a specific search pattern.                                                                      |
 | [format](format.md)                                     | Code formatting layer for spacevim, includes a variety of formatters for many filetypes.                                                                             |
-| [fzf](fzf.md)                                           | This layer provides a heavily customized [fzf](https://github.com/junegunn/fzf) centric workflow                                                                                                       |
 | [git](git.md)                                           | This layer adds extensive support for git.                                                                                                                           |
 | [github](github.md)                                     | This layer provides GitHub integration for spacevim.                                                                                                                 |
 | [gtags](gtags.md)                                       | This layer provides gtags manager for project.                                                                                                                    |
@@ -197,7 +193,6 @@ call spacevim#dev#layers#update()
 | [lang#xml](lang/xml/)                                 | This layer is for xml development, provides syntax checking, indentation etc.                                                                                       |
 | [lang#zig](lang/zig/)                                 | This layer is for zig development, provides code runner support for zig files.                                                                                      |
 | [language-server-protocol](language-server-protocol.md) | This layers provides language server protocol for Neovim. |
-| [leaderf](leaderf/)                                   | This layer provides a heavily customized LeaderF centric workflow.                                                                                                   |
 | [shell](shell/)                                       | This layer provides shell support in spacevim                                                                                                                       |
 | [ssh](ssh/)                                           | This layer provides ssh support in spacevim                                                                                                                         |
 | [sudo](sudo/)                                         | sudo layer provides the ability to read and write files with elevated privileges in spacevim                                                                        |

@@ -18,6 +18,11 @@ description: "Logger API provides some basic functions for log message."
 `logger` API provides some functions to create logger for plugin.
 The Logger class can log messages via buffer, file, vim.notify and :messages.
 
+You can watch the log with external tools over the log file.
+```sh
+lnav $HOME/.local/state/nvim/svim.log
+```
+
 ## Functions
 
 | name                  | description                       |

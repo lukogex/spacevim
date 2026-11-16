@@ -1232,14 +1232,14 @@ let g:spacevim_project_rooter_outermost = 1
 ""
 " @section commandline_prompt, options-commandline_prompt
 " @parentsection options
-" Config the command line prompt for flygrep and denite etc.
+" Config the command line prompt for flygrep.
 " Default is `>`, for example:
 " >
 "   commandline_prompt = '➭'
 " <
 
 ""
-" Config the command line prompt for flygrep and denite etc.
+" Config the command line prompt for flygrep.
 let g:spacevim_commandline_prompt = '>'
 
 ""
