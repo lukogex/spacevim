@@ -12,7 +12,7 @@ local Layer = {
 local logger = require("spacevim.api.logger"):new({ name = "layer" })
 local utils = require('spacevim.utils')
 
-local types = {'codingagent'}
+local types = {'codingagent', 'finder'}
 
 ---Constructor for Layer class.
 ---@param _type string

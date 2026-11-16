@@ -10,6 +10,7 @@ layer:add_plugin_spec('telescope', {
 })
 
 -- Moved from bundle/telescope-menu/lua/telescope/_extensions/menu.lua
+-- What is about lua/telescope/_extensions/.. how can we unify them all?
 local action_state = require("telescope.actions.state")
 local actions = require("telescope.actions")
 local conf = require("telescope.config").values
